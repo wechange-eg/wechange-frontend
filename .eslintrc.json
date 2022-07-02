@@ -1,3 +1,68 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:react/jsx-runtime"
+  ],
+  "rules": {
+    "comma-dangle": ["error", "always-multiline"],
+    "object-curly-newline": [
+      "error",
+      {
+        "consistent": true
+      }
+    ],
+    "react/prop-types": "off",
+    "semi": ["error", "never"],
+    "sort-imports": "error",
+    "import/newline-after-import": ["error", { "count": 2 }],
+    "@typescript-eslint/semi": ["error", "never"],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "format": ["strictCamelCase", "PascalCase", "UPPER_CASE"],
+        "selector": ["variable"],
+        "leadingUnderscore": "allow"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "args": "none",
+        "varsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_"
+      }
+    ],
+    "react-hooks/exhaustive-deps": "error",
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 2
+      }
+    ],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-max-props-per-line": [
+      "error",
+      {
+        "maximum": 1
+      }
+    ],
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "ignoreCase": false
+      }
+    ],
+    "react/jsx-boolean-value": "error"
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
 }
