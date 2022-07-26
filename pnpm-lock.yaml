@@ -11,6 +11,7 @@ specifiers:
   '@chakra-ui/utils': ^2.0.2
   '@emotion/react': ^11.9.3
   '@emotion/styled': ^11.9.3
+  '@hookform/resolvers': ^2.9.6
   '@types/node': 18.0.0
   '@types/prop-types': ^15.7.5
   '@types/react': 18.0.14
@@ -46,6 +47,7 @@ dependencies:
   '@chakra-ui/utils': 2.0.2
   '@emotion/react': 11.9.3_4jaruczdv2uxjj3lb2xbkiuci4
   '@emotion/styled': 11.9.3_toiz7tndcw4z2b7gxmmeo5fkcu
+  '@hookform/resolvers': 2.9.6_react-hook-form@7.33.1
   framer-motion: 6.4.3_biqbaboplfbrettd7655fr4n2y
   immer: 9.0.15
   next: 12.1.6_beenoklgwfttvph5dgxj7na7aq
@@ -1201,6 +1203,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@hookform/resolvers/2.9.6_react-hook-form@7.33.1:
+    resolution: {integrity: sha512-f4VxF8w9rdX0WsDCk3FW1dGPj/Sj8+1Ulcgtm5ymgWEpbA/fjY+NUDh+L9hftmxDgP8+EJFtF+qFK4gPEXVrVQ==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.33.1_react@18.2.0
+    dev: false
 
   /@humanwhocodes/config-array/0.9.5:
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==}
