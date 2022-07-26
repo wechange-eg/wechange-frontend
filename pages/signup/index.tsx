@@ -29,7 +29,7 @@ const Signup: NextPageWithLayout = () => (
     <Box textAlign="center">
       <Text>Already have an account?</Text>
       <NextLink
-        href="#"
+        href="/login"
         passHref
       >
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
