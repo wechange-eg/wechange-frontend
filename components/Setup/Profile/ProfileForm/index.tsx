@@ -12,11 +12,9 @@ import AvatarInput from './AvatarInput'
 import VStack from '../../../../layouts/VStack'
 
 
-const INITIAL_NAME = 'Natalija Jurcevic'
-
 const ProfileForm: FC = () => {
-  const [displayName, setDisplayName] = useState<string>(INITIAL_NAME)
-  const [avatarName, setAvatarName] = useState<string>(INITIAL_NAME)
+  const [displayName, setDisplayName] = useState<string>()
+  const [avatarName, setAvatarName] = useState<string>()
 
   useDebounce(
     () => {
