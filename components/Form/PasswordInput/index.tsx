@@ -1,13 +1,14 @@
-import { Button, InputRightElement } from '@chakra-ui/react'
-import { FC, useState } from 'react'
+import { Button, InputRightElement, forwardRef } from '@chakra-ui/react'
 import { InputGroup, InputProps } from '@chakra-ui/input'
+import { useState } from 'react'
 // eslint-disable-next-line sort-imports
 import Input from '../Input'
 
 
 interface PasswordInputProps extends InputProps {}
 
-const PasswordInput: FC<PasswordInputProps> = (props) => {
+
+const PasswordInput = forwardRef<PasswordInputProps, 'input'>((props, ref) => {
   const [show, setShow] = useState<boolean>(false)
   const handleClick = () => setShow(!show)
 
@@ -16,6 +17,7 @@ const PasswordInput: FC<PasswordInputProps> = (props) => {
       {/* eslint-disable react/jsx-props-no-spreading */}
       <Input
         py={1.5}
+        ref={ref}
         type={show ? 'text' : 'password'}
         {...props}
       />
@@ -34,7 +36,7 @@ const PasswordInput: FC<PasswordInputProps> = (props) => {
       </InputRightElement>
     </InputGroup>
   )
-}
+})
 
 
 export default PasswordInput
