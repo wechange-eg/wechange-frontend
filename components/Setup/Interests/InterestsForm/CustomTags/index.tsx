@@ -1,4 +1,4 @@
-import { FC, KeyboardEventHandler, useState } from 'react'
+import { FC } from 'react'
 import {
   FormControl,
   FormLabel,
@@ -10,7 +10,6 @@ import {
 import { useImmerReducer } from 'use-immer'
 import { useForm } from 'react-hook-form'
 import { Input } from '../../../../Form'
-import { Authorization } from '../../../../../dtos/login/Authorization'
 
 
 const CustomTags: FC = () => {
@@ -80,6 +79,7 @@ const CustomTags: FC = () => {
       >
         <FormControl>
           <FormLabel>Add more topics</FormLabel>
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
           <Input {...register('newTag')} />
         </FormControl>
       </form>

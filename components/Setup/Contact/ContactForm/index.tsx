@@ -14,7 +14,6 @@ import {
 import { FC, useCallback } from 'react'
 import { HiChevronDown, HiOutlineTrash } from 'react-icons/hi'
 import { useImmerReducer } from 'use-immer'
-// eslint-disable-next-line sort-imports
 import ContactInfoInput, { ContactType } from './ContactInfoInput'
 import VStack from '../../../../layouts/VStack'
 

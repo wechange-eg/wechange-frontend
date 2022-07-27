@@ -1,11 +1,5 @@
-import {
-  FormControl,
-  FormLabel,
-  Text,
-  Wrap,
-} from '@chakra-ui/react'
+import { Text } from '@chakra-ui/react'
 import { FC } from 'react'
-import { Input } from '../../../Form'
 import PredefinedTopics from './PredefinedTopics'
 import CustomTags from './CustomTags'
 
