@@ -16,7 +16,6 @@
     ],
     "react/prop-types": "off",
     "semi": ["error", "never"],
-    "sort-imports": "error",
     "import/newline-after-import": ["error", { "count": 2 }],
     "@typescript-eslint/semi": ["error", "never"],
     "@typescript-eslint/naming-convention": [
