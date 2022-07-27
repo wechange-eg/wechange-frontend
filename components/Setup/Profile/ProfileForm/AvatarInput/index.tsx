@@ -1,5 +1,4 @@
-import { FC } from 'react'
-// eslint-disable-next-line sort-imports
+import { FC, useState } from 'react'
 import { Avatar, useDisclosure } from '@chakra-ui/react'
 import AvatarModal from '../AvatarModal'
 
@@ -7,10 +6,12 @@ import AvatarModal from '../AvatarModal'
 const AvatarInput: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
+  const [avatarBackgroundColor, setAvatarBackgroundColor] = useState<string>('#B794F4')
+
   return (
     <>
       <Avatar
-        backgroundColor="red.400"
+        backgroundColor={avatarBackgroundColor}
         color="white"
         name="Teal White"
         onClick={onOpen}
@@ -18,8 +19,10 @@ const AvatarInput: FC = () => {
       />
 
       <AvatarModal
+        avatarBackgroundColor={avatarBackgroundColor}
         isOpen={isOpen}
         onClose={onClose}
+        onPickAvatarBackgroundColor={setAvatarBackgroundColor}
       />
     </>
   )

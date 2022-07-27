@@ -11,14 +11,32 @@ import {
   Wrap,
   WrapItem,
 } from '@chakra-ui/react'
-import { FC } from 'react'
+import { Dispatch, FC } from 'react'
 import VStack from '../../../../../layouts/VStack'
 
+// todo: get the color variables from theme
+const colors: string[] = [
+  '#4FD1C5',
+  '#63B3ED',
+  '#68D391',
+  '#76E4F7',
+  '#0987A0',
+  '#A7ABB0',
+  '#B794F4',
+  '#CBD5E0',
+  '#F687B3',
+  '#F6AD55',
+  '#F6E05E',
+  '#FC8181',
+]
 
-type AvatarModalProps = Omit<ModalProps, 'children'>
+interface AvatarModalProps extends Omit<ModalProps, 'children'> {
+  avatarBackgroundColor: string
+  onPickAvatarBackgroundColor: Dispatch<string>
+}
 
 const AvatarModal: FC<AvatarModalProps> = (props) => {
-  const { isOpen, onClose } = props
+  const { avatarBackgroundColor, onPickAvatarBackgroundColor, isOpen, onClose } = props
 
   return (
     <Modal
@@ -38,7 +56,7 @@ const AvatarModal: FC<AvatarModalProps> = (props) => {
             alignItems="center"
           >
             <Avatar
-              backgroundColor="red.400"
+              backgroundColor={avatarBackgroundColor}
               color="white"
               name="Teal White"
               size="xl"
@@ -62,11 +80,13 @@ const AvatarModal: FC<AvatarModalProps> = (props) => {
               spacing={6}
             >
               {
-                Array(12).fill(0).map((e) => (
+                colors.map((color) => (
                   <WrapItem
-                    backgroundColor="teal.300"
+                    backgroundColor={color}
                     borderRadius="full"
                     h="40px"
+                    key={`avatar-color-${color}`}
+                    onClick={() => { onPickAvatarBackgroundColor(color) }}
                     w="40px"
                   />
                 ))
@@ -84,7 +104,12 @@ const AvatarModal: FC<AvatarModalProps> = (props) => {
           >
             Cancel
           </Button>
-          <Button variant="brand-solid">Save</Button>
+          <Button
+            onClick={onClose}
+            variant="brand-solid"
+          >
+            Save
+          </Button>
         </ModalFooter>
       </ModalContent>
     </Modal>
