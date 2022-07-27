@@ -7,6 +7,7 @@ import {
 import { FC } from 'react'
 import { Input } from '../../../Form'
 import PredefinedTopics from './PredefinedTopics'
+import CustomTags from './CustomTags'
 
 
 const InterestsForm: FC = () => (
@@ -18,15 +19,7 @@ const InterestsForm: FC = () => (
 
     <PredefinedTopics />
 
-    <Wrap
-      spacingX={2}
-      spacingY={4}
-    />
-
-    <FormControl>
-      <FormLabel>Add more topics</FormLabel>
-      <Input />
-    </FormControl>
+    <CustomTags />
   </>
 )
 
