@@ -12,7 +12,7 @@ import AvatarInput from './AvatarInput'
 import VStack from '../../../../layouts/VStack'
 
 
-const INITIAL_NAME = 'W E'
+const INITIAL_NAME = 'Natalija Jurcevic'
 
 const ProfileForm: FC = () => {
   const [displayName, setDisplayName] = useState<string>(INITIAL_NAME)
