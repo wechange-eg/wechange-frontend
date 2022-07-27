@@ -4,7 +4,7 @@ import AvatarModal from '../AvatarModal'
 
 
 interface AvatarInputProps {
-  avatarName: string
+  avatarName?: string
 }
 
 
@@ -27,12 +27,18 @@ const AvatarInput: FC<AvatarInputProps> = (props) => {
 
       <AvatarModal
         avatarBackgroundColor={avatarBackgroundColor}
+        avatarName={avatarName}
         isOpen={isOpen}
         onClose={onClose}
         onPickAvatarBackgroundColor={setAvatarBackgroundColor}
       />
     </>
   )
+}
+
+
+AvatarInput.defaultProps = {
+  avatarName: undefined,
 }
 
 

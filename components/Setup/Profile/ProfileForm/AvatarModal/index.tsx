@@ -32,11 +32,12 @@ const colors: string[] = [
 
 interface AvatarModalProps extends Omit<ModalProps, 'children'> {
   avatarBackgroundColor: string
+  avatarName?: string
   onPickAvatarBackgroundColor: Dispatch<string>
 }
 
 const AvatarModal: FC<AvatarModalProps> = (props) => {
-  const { avatarBackgroundColor, onPickAvatarBackgroundColor, isOpen, onClose } = props
+  const { avatarName, avatarBackgroundColor, onPickAvatarBackgroundColor, isOpen, onClose } = props
 
   return (
     <Modal
@@ -58,7 +59,7 @@ const AvatarModal: FC<AvatarModalProps> = (props) => {
             <Avatar
               backgroundColor={avatarBackgroundColor}
               color="white"
-              name="Teal White"
+              name={avatarName}
               size="xl"
             />
 
@@ -114,6 +115,11 @@ const AvatarModal: FC<AvatarModalProps> = (props) => {
       </ModalContent>
     </Modal>
   )
+}
+
+
+AvatarModal.defaultProps = {
+  avatarName: undefined,
 }
 
 
