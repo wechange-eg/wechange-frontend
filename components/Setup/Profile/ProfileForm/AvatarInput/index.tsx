@@ -3,7 +3,14 @@ import { Avatar, useDisclosure } from '@chakra-ui/react'
 import AvatarModal from '../AvatarModal'
 
 
-const AvatarInput: FC = () => {
+interface AvatarInputProps {
+  avatarName: string
+}
+
+
+const AvatarInput: FC<AvatarInputProps> = (props) => {
+  const { avatarName } = props
+
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const [avatarBackgroundColor, setAvatarBackgroundColor] = useState<string>('#B794F4')
@@ -13,7 +20,7 @@ const AvatarInput: FC = () => {
       <Avatar
         backgroundColor={avatarBackgroundColor}
         color="white"
-        name="Teal White"
+        name={avatarName}
         onClick={onOpen}
         size="xl"
       />
