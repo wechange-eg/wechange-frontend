@@ -6,6 +6,8 @@ import {
   Input,
   Link,
 } from '@chakra-ui/react'
+import axios from 'axios'
+// eslint-disable-next-line sort-imports
 import { FC } from 'react'
 import NextLink from 'next/link'
 import { useForm } from 'react-hook-form'
@@ -16,15 +18,19 @@ import { PasswordInput } from '../../Form'
 import VStack from '../../../layouts/VStack'
 
 
+const onLogin = async (authorization: Authorization) => {
+  const response = await axios.post('https://dev.wechange.de/v3/login', authorization)
+  console.log(response)
+}
+
 const LoginForm: FC = () => {
   const { register, handleSubmit } = useForm<Authorization>({
     resolver: zodResolver(AuthorizationSchema),
   })
-  const onSubmit = (data: Authorization) => console.log(data)
 
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onLogin)}>
       <VStack
         align="stretch"
         size="sm"
