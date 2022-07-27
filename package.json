@@ -29,6 +29,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.33.1",
     "react-icons": "^4.4.0",
+    "react-use": "^17.4.0",
     "use-immer": "^0.7.0",
     "zod": "^3.17.10"
   },
