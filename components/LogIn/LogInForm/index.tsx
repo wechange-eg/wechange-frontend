@@ -19,7 +19,10 @@ import VStack from '../../../layouts/VStack'
 
 
 const onLogin = async (authorization: Authorization) => {
-  const response = await axios.post(process.env.NEXT_PUBLIC_WECHANGE_BACKEND as string, authorization)
+  const response = await axios.post(
+    process.env.NEXT_PUBLIC_WECHANGE_BACKEND as string,
+    authorization
+  )
   console.log(response)
 }
 
