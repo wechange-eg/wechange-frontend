@@ -1,8 +1,4 @@
 import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
   Box,
   Link,
   Text,
@@ -10,7 +6,6 @@ import {
 import NextLink from 'next/link'
 // eslint-disable-next-line sort-imports
 import Card from '../../components/Card'
-import Closable from '../../containers/Closable'
 import FullHeightCenterWithNavBar from '../../layouts/FullHeightCenterWithNavBar'
 import { NextPageWithLayout } from '../_app'
 import ProfileForm from '../../components/SignUp/ProfileForm'
