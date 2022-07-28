@@ -6,17 +6,13 @@ import {
   Input,
   Link,
 } from '@chakra-ui/react'
-import axios from 'axios'
 import { FC } from 'react'
 import NextLink from 'next/link'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import { zodResolver } from '@hookform/resolvers/zod'
-import ls from 'local-storage'
 import { useMount } from 'react-use'
 import { Authorization, AuthorizationSchema } from '../../../dtos/login/Authorization'
-import { LoginResponse } from '../../../dtos/endpoints/login/LoginResponse'
-import { LoginRequest } from '../../../dtos/endpoints/login/LoginRequest'
 import { PasswordInput } from '../../Form'
 import VStack from '../../../layouts/VStack'
 
