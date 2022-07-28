@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 
 export const AuthorizationSchema = z.object({
-  email: z.string().trim().email(),
+  username: z.string().trim().email(),
   password: z.string().min(1),
 })
 
