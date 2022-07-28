@@ -27,7 +27,8 @@ const SignUpForm: FC = () => (
     <FormControl isRequired>
       <FormLabel htmlFor="password">Password</FormLabel>
       <PasswordInput />
-      <FormHelperText variant="success">Password is strong</FormHelperText>
+      {/* todo: uncomment */}
+      {/* <FormHelperText variant="success">Password is strong</FormHelperText> */}
     </FormControl>
 
     <NextLink href="/signup/profile">

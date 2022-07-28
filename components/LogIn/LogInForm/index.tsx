@@ -7,30 +7,61 @@ import {
   Link,
 } from '@chakra-ui/react'
 import axios from 'axios'
-// eslint-disable-next-line sort-imports
 import { FC } from 'react'
 import NextLink from 'next/link'
 import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/router'
 import { zodResolver } from '@hookform/resolvers/zod'
-// eslint-disable-next-line sort-imports
+import ls from 'local-storage'
+import { useMount } from 'react-use'
 import { Authorization, AuthorizationSchema } from '../../../dtos/login/Authorization'
+import { LoginResponse } from '../../../dtos/endpoints/login/LoginResponse'
+import { LoginRequest } from '../../../dtos/endpoints/login/LoginRequest'
 import { PasswordInput } from '../../Form'
 import VStack from '../../../layouts/VStack'
 
 
-const onLogin = async (authorization: Authorization) => {
-  const response = await axios.post(
-    process.env.NEXT_PUBLIC_WECHANGE_BACKEND as string,
-    authorization,
-  )
-  console.log(response)
-}
-
 const LoginForm: FC = () => {
+  const router = useRouter()
+
   const { register, handleSubmit } = useForm<Authorization>({
     resolver: zodResolver(AuthorizationSchema),
   })
 
+  useMount(() => {
+    // const token = ls('token')
+    //
+    // if ()
+  })
+
+
+  const onLogin = async (authorization: any) => {
+    await router.push('/dashboard')
+
+    // todo: add adaptor for sender and receiver
+    // const payload: LoginRequest = authorization as LoginRequest
+    //
+    // const url = `${process.env.NEXT_PUBLIC_WECHANGE_BACKEND}/login/`
+    //
+    // let response: LoginResponse | null = null
+    //
+    // try {
+    //   const { data } = await axios.post(
+    //     url,
+    //     payload,
+    //   )
+    //
+    //   response = data
+    // } catch (e) {
+    //   // console.error(e)
+    // }
+    //
+    // // console.log(response)
+    // if (response) {
+    //   ls('token', response.data.access)
+    //   await router.push('/dashboard')
+    // }
+  }
 
   return (
     <form onSubmit={handleSubmit(onLogin)}>
@@ -39,9 +70,9 @@ const LoginForm: FC = () => {
         size="sm"
       >
         <FormControl isRequired>
-          <FormLabel htmlFor="email">Email</FormLabel>
+          <FormLabel htmlFor="username">Email</FormLabel>
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          <Input {...register('email')} />
+          <Input {...register('username')} />
         </FormControl>
 
         {/* use password field because of the show button.

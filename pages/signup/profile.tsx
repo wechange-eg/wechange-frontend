@@ -27,20 +27,21 @@ const Profile: NextPageWithLayout = () => (
       Sign Up
     </Text>
 
-    <Closable>
-      <Alert
-        status="error"
-        variant="solid"
-      >
-        <AlertIcon />
-        <Box>
-          <AlertTitle>Log In not possible</AlertTitle>
-          <AlertDescription>
-            The e-mail/password you entered is not correct, please try again.
-          </AlertDescription>
-        </Box>
-      </Alert>
-    </Closable>
+    {/* todo: uncomment */}
+    {/* <Closable> */}
+    {/*   <Alert */}
+    {/*     status="error" */}
+    {/*     variant="solid" */}
+    {/*   > */}
+    {/*     <AlertIcon /> */}
+    {/*     <Box> */}
+    {/*       <AlertTitle>Log In not possible</AlertTitle> */}
+    {/*       <AlertDescription> */}
+    {/*         The e-mail/password you entered is not correct, please try again. */}
+    {/*       </AlertDescription> */}
+    {/*     </Box> */}
+    {/*   </Alert> */}
+    {/* </Closable> */}
 
     <Card>
       <ProfileForm />
